@@ -16,7 +16,7 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-/* header section  */
+/* header start  */
 header {
     background-color: var(--secondary-color);
     padding: 20px 30px;
@@ -39,7 +39,7 @@ header h1 a {
 }
 
 header nav {
-    margin: 20px 30px;
+    margin: 20px 0;
 }
 
 header nav ul {
@@ -56,9 +56,6 @@ header nav ul li a {
     text-decoration: none;
     color: var(--primary-color);
     border-bottom: 3px solid var(--primary-color);
-}
-
-.for-margin {
     margin-right: 10px;
 }
 
@@ -86,23 +83,33 @@ header nav ul li a:hover {
     padding: 20px;
     position: absolute;
     bottom: 0;
-    right: 100px;
+    right: 20px;
     border-radius: 20%;
+    
 }
 
 .subtitle h2:hover {
     color: var(--primary-color);
     background-color: var(--secondary-color);
 }
+/* subtitle section end  */
 
-/* about me section start  */
+/* container created for about me, work and contact me (footer) sections  */
 .container {
     width: 1200px;
     margin: auto;
 }
+
+/* about me section start  */
 .about-me-section {
     display: flex;
     margin-bottom: 30px;
+}
+
+.left-box {
+    border-right: 3px solid var(--secondary-color);
+    min-width: 160px;
+    margin-right: 20px;
 }
 
 .left-box h2{
@@ -112,21 +119,16 @@ header nav ul li a:hover {
     padding: 10px;
 }
 
-.left-box {
-    border-right: 3px solid var(--secondary-color);
-    min-width: 160px;
-    margin-right: 20px;
-}
-
-.about-me-section p {
-    line-height: 1.3;
-}
-
 .text-div {
     font-weight: lighter;
     letter-spacing: 0.9px;
     line-height: 1.5;
 }
+
+.text-div p {
+    line-height: 1.3;
+}
+/* About me section end  */
 
 /* work section start  */
 .work-section {
@@ -134,26 +136,28 @@ header nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-.work-section img {
-    width: 100%;
-    height: 100%;
-    opacity: 85%;
-}
-
-.work-section img:hover {
-    opacity: 100%
-}
-
-.image-box:first-child {
-    width: 100%;
-    height: 500px;
-}
-
 .image-box {
     position: relative;
     width: 48%;
     margin-bottom: 15px;
     border: 5px solid var(--primary-color);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    opacity: 85%;
+}
+
+.image-box img:hover {
+    opacity: 100%;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.image-box:first-child {
+    width: 100%;
+    height: 500px;
 }
 
 .image-box span {
@@ -165,13 +169,14 @@ header nav ul li a:hover {
     z-index: 1;
 }
 
-
 .images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+/* work section end  */
 
+/* footer start  */
 footer {
     display: flex;
 }
@@ -206,27 +211,40 @@ footer {
     border-radius: 15px;
     border: none;
 }
+/* footer end  */
 
 /* media queries  */
-
+/* for 980px screens  */
 @media screen and (max-width: 980px) {
-    header  {
-        /* padding-bottom: 0; */
+    header {
         justify-content: center;
     }
+
     header h1 {
         padding: 0;
         margin: 0;
         width: 100%;
         text-align: center;
     }
+    
     header nav ul {
         margin-top: 20px;
         width: 100%;
         justify-content: center;
     }
+    
     header nav ul li a {
         font-size: 20px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+    }
+
+    .image-box:first-child {
+        height: 300px;
     }
 
     footer h2, footer div {
@@ -236,17 +254,13 @@ footer {
         align-items: center;
         justify-content: end;
     }
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 80%;
-    }
 
     .footer-bar ul {
         flex-direction: column;
     }
+}
 
-
+/* for 768px screens  */
 @media screen and (max-width: 768px) {
     header nav ul li a {
         border: none;
@@ -257,25 +271,23 @@ footer {
     }
 
 .image-box span {
-    padding: 0;
-}
+        padding: 0;
+    }
 }
 
+/* for 575px screens  */
 @media screen and (max-width: 575px) {
     header nav ul  {
         display: flex;
         flex-direction: column;
     }
+
     header nav ul li {
         padding: 20px;
     }
-    .subtitle h2 {
-        bottom: 100px;
-        right: 0;
-    }
 
     .image-box:first-child {
-    width: 100%;
-    height: 250px;
+        width: 100%;
+        height: 200px;
     }
 }
