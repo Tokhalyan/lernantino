@@ -136,6 +136,17 @@ header nav ul li a:hover {
     margin-bottom: 30px;
 }
 
+#author-img {
+    display: flex;
+    justify-content: center;
+}
+
+#author-img img {
+    width: 60%;
+    height: 95%;
+    margin: auto;
+}
+
 .image-box {
     position: relative;
     width: 48%;
@@ -162,7 +173,7 @@ header nav ul li a:hover {
 
 .image-box span {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 5px 15px;
